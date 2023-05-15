@@ -1,6 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Link from "next/link";
+import Link from "../components/Link";
 import Layout from "../components/Layout";
 import path from "path";
 import { Component } from "react";
@@ -66,10 +66,17 @@ export default class Home extends Component {
           </ul>
           <nav>
             {page > 1 && (
-              <button onClick={handlePreviousPageClick}>Previous Page</button>
+              <button
+                className="text-orange-400"
+                onClick={handlePreviousPageClick}
+              >
+                Previous Page
+              </button>
             )}
             {page < totalPages && (
-              <button onClick={handleNextPageClick}>Next Page</button>
+              <button className="text-orange-400" onClick={handleNextPageClick}>
+                Next Page
+              </button>
             )}
           </nav>
         </section>
