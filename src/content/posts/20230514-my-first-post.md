@@ -2,6 +2,7 @@
 title: My First Post
 date: 2023-05-14
 video: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+description: lorem ipsum placeholder post
 tags:
   - highlighted
 ---

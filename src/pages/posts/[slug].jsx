@@ -1,17 +1,36 @@
 import fs from "fs";
-import matter from "gray-matter";
 import Layout from "../../components/Layout";
-import ReactPlayer from "react-player";
+import matter from "gray-matter";
 import path from "path";
+import ReactPlayer from "react-player";
+import { NextSeo } from "next-seo";
 
-export default function Post({ frontmatter, content }) {
+export default function Post({ frontmatter, content, slug }) {
   return (
-    <Layout>
-      <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.date}</p>
-      <ReactPlayer url={frontmatter.video} />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
-    </Layout>
+    <>
+      <NextSeo
+        title={frontmatter.title}
+        description={frontmatter.description}
+        canonical={`https://ai.elastic.co/posts/${slug}`}
+        openGraph={{
+          url: `https://ai.elastic.co/posts/${slug}`,
+          title: frontmatter.title,
+          description: frontmatter.description,
+          images: [
+            {
+              url: frontmatter.image,
+              alt: frontmatter.title,
+            },
+          ],
+        }}
+      />
+      <Layout>
+        <h1>{frontmatter.title}</h1>
+        <p>{frontmatter.date}</p>
+        <ReactPlayer url={frontmatter.video} />
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+      </Layout>
+    </>
   );
 }
 
@@ -46,11 +65,12 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      content,
       frontmatter: {
         ...data,
         date: data.date.toISOString(),
       },
-      content,
+      slug,
     },
   };
 }
