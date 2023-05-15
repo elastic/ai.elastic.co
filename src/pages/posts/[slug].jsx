@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import path from "path";
 import ReactPlayer from "react-player";
 import { NextSeo } from "next-seo";
+import ReactMarkdown from "react-markdown";
 
 export default function Post({ frontmatter, content, slug }) {
   return (
@@ -28,7 +29,7 @@ export default function Post({ frontmatter, content, slug }) {
         <h1>{frontmatter.title}</h1>
         <p>{frontmatter.date}</p>
         <ReactPlayer url={frontmatter.video} />
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <ReactMarkdown>{content}</ReactMarkdown>
       </Layout>
     </>
   );
