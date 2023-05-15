@@ -40,8 +40,67 @@ export default class Home extends Component {
 
     return (
       <Layout>
-        <h1>My Blog</h1>
-        <section>
+        <section className="flex flex-col h-screen justify-center text-center">
+          <h1 className="font-bold mb-5 text-5xl">
+            Find the answers you care about,&nbsp;faster.
+          </h1>
+          <p className="text-neutral-400 text-xl">
+            Elastic’s AI and ML capabilities help you find more
+            relevant&nbsp;answers.
+          </p>
+        </section>
+        <section className="max-w-4xl mx-auto">
+          <div className="flex items-center mb-40">
+            <div className="bg-neutral-400 h-80 w-96 shrink-0" />
+            <div className="h-fit px-10">
+              <h3 className="font-bold mb-4 text-2xl">Vector Search</h3>
+              <p className="text-neutral-400">
+                Veniam esse ea laborum et reprehenderit sit cillum officia
+                commodo deserunt. Aliquip dolore cillum anim et fugiat nulla
+                amet aliqua officia minim. Culpa eu veniam elit duis adipisicing
+                ex aute.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center mb-40">
+            <div className="h-fit px-10">
+              <h3 className="font-bold mb-4 text-2xl">Vector Search</h3>
+              <p className="text-neutral-400">
+                Veniam esse ea laborum et reprehenderit sit cillum officia
+                commodo deserunt. Aliquip dolore cillum anim et fugiat nulla
+                amet aliqua officia minim. Culpa eu veniam elit duis adipisicing
+                ex aute.
+              </p>
+            </div>
+            <div className="bg-neutral-400 h-80 w-96 shrink-0" />
+          </div>
+          <div className="flex items-center mb-40">
+            <div className="bg-neutral-400 h-80 w-96 shrink-0" />
+            <div className="h-fit px-10">
+              <h3 className="font-bold mb-4 text-2xl">Vector Search</h3>
+              <p className="text-neutral-400">
+                Veniam esse ea laborum et reprehenderit sit cillum officia
+                commodo deserunt. Aliquip dolore cillum anim et fugiat nulla
+                amet aliqua officia minim. Culpa eu veniam elit duis adipisicing
+                ex aute.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center">
+            <div className="h-fit px-10">
+              <h3 className="font-bold mb-4 text-2xl">Vector Search</h3>
+              <p className="text-neutral-400">
+                Veniam esse ea laborum et reprehenderit sit cillum officia
+                commodo deserunt. Aliquip dolore cillum anim et fugiat nulla
+                amet aliqua officia minim. Culpa eu veniam elit duis adipisicing
+                ex aute.
+              </p>
+            </div>
+            <div className="bg-neutral-400 h-80 w-96 shrink-0" />
+          </div>
+        </section>
+
+        {/* <section>
           <h2>Highlighted Posts</h2>
           <ul>
             {highlightedPosts.map((post) => (
@@ -79,7 +138,7 @@ export default class Home extends Component {
               </button>
             )}
           </nav>
-        </section>
+        </section> */}
       </Layout>
     );
   }
